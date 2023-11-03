@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Estadística y Probabilidad</title>
+    <link rel="stylesheet" href="text/css.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Proyecto Final De Estadística</h1>
+        <h1>Calculadora de Estadística y Probabilidad</h1>
+        <div id="binomial-calculator" class="informacion">
+            <h2>Eduardo René de León Estrada  9989-20-4388</h2>
+            <h2>Gerardo Antonio Rodas Carrera 9989-19-24158</h2>
+            <h2>Angela Baneza Cajas Ruano 9989-20-22097</h2>
+        </div>
+        
+
+        <div class="calculator">
+            <div id="bayes-calculator" class="calculator-section">
+                <h2>Teorema de Bayes</h2>
+                <label for="probabilityA">Probabilidad A:</label>
+                <input type="text" id="probabilityA" placeholder="0.5"><br><br>
+                <label for="probabilityB">Probabilidad B:</label>
+                <input type="text" id="probabilityB" placeholder="0.5"><br><br>
+                <label for="probabilityBA">Probabilidad B|A:</label>
+                <input type="text" id="probabilityBA" placeholder="0.5"><br><br>
+                <button onclick="calculateBayes()">Calcular</button>
+                <p>Resultado: <span id="bayes-result"></span></p>
+            </div>
+
+            <div id="bernoulli-calculator" class="calculator-section">
+                <h2>Distribución de Bernoulli</h2>
+                <label for="probabilidadExito">Probabilidad de Éxito (p):</label>
+                <input type="text" id="probabilidadExito" step="0.01" placeholder="Ej: 85"><br><br>
+                <button id="calcularButton">Calcular</button>
+                <p>Probabilidad si X=1: <span id="probabilidadX1"></span></p>
+                <p>Probabilidad si X=0: <span id="probabilidadX0"></span></p>
+                <p>Esperanza: <span id="esperanzab"></span></p>
+                <p>Varianza: <span id="varianzab"></span></p>
+                <P>Desviación estándar: <span id="desviacionb"></span></P>
+            </div>
+
+            <!-- Distribución Binomial -->
+            
+            <div id="binomial-calculator" class="calculator-section">
+                <h2>Distribución Binomial</h2>
+                <form id="probabilidadForm">
+                    <label for="p">P (probabilidad de éxito)</label>
+                    <input type="number" step="0.01" id="p" required placeholder="Ej: 85">
+                    <br><br>
+                    <label for="n">N (número de eventos):</label>
+                    <input type="number" id="n" required>
+                    <br><br>
+                    <label for="k">X (número de éxito)</label>
+                    <input type="number" id="k" required>
+                    <br><br>
+                    <button type="button" onclick="calcularProbabilidad1()">Calcular</button>
+                </form>
+                <p>La probabilidad es de: <span id="resultado"></span></p>
+                <p>Esperanza: <span id="esperanzabi"></span></p>
+                <p>Varianza: <span id="varianzabi"></span></p>
+                <P>Desviación estándar: <span id="desviacionbi"></span></P>
+            </div>
+
+            <!-- Distribución de Poisson -->
+            <div id="poisson-calculator" class="calculator-section">
+                <h2>Distribución de Poisson</h2>
+                <label for="lambdaPoisson">&lambda; :</label>
+                <input type="text" id="lambda" placeholder="147"><br><br>
+                <label for="kPoisson">P(x&le;): </label>
+                <input type="text" id="kPoisson" placeholder="160"><br><br>
+                <button onclick="compute()">Calcular</button>
+                <p>Resultado: <span id="poisson-result"></span></p>
+                <p>Desviación estándar: <span id="desviacionp"></span></p>
+            </div>
+
+
+            <!-- Distribución Normal -->
+            <div id="normal-calculator" class="calculator-section">
+                <h2>Distribución Normal</h2>
+                <label for="media">Media:</label>
+                <input type="text" id="media" placeholder="0"><br><br>
+                <label for="desviacion">Desviación estándar:</label>
+                <input type="text" id="desviacion" placeholder="1"><br><br>
+                <label for="temperatura">Valor de x:</label>
+                <input type="text" id="temperatura" placeholder="0"><br><br>
+                <button onclick="calcularProbabilidad()">Calcular</button>
+                <p>Resultado: <span id="probabilidadResultado"></span></p>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jstat/1.6.3/jstat.min.js"></script>
+            </div>
+        </div><label></label>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
